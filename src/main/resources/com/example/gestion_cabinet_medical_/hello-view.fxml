@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="355.0" prefWidth="670.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_cabinet_medical_.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <SplitPane dividerPositions="0.716259298618491" prefHeight="343.0" prefWidth="661.0">
+        <items>
+            <AnchorPane fx:id="Container" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane fx:id="A3" minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="463.0" visible="false">
+                      <children>
+                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" layoutY="-1.0" prefHeight="28.0" prefWidth="149.0" text="RENDEZ - VOUS">
+                              <font>
+                                  <Font name="Jokerman" size="12.0" />
+                              </font>
+                          </Label>
+                          <TableView layoutY="28.0" prefHeight="285.0" prefWidth="446.0">
+                              <columns>
+                                  <TableColumn prefWidth="111.99999749660492" />
+                                  <TableColumn prefWidth="108.00000762939453" />
+                                  <TableColumn prefWidth="114.66664123535156" />
+                                  <TableColumn prefWidth="112.0" />
+                              </columns>
+                          </TableView>
+                      </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="A1" minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="411.0">
+                      <children>
+                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="17.0" prefHeight="28.0" prefWidth="149.0" text="New Rendez-Vous">
+                              <font>
+                                  <Font name="Jokerman" size="12.0" />
+                              </font>
+                          </Label>
+                          <DatePicker fx:id="date" layoutX="100.0" layoutY="130.0" prefHeight="28.0" prefWidth="247.0" promptText="Choose the date " />
+                          <TextField fx:id="nom" layoutX="100.0" layoutY="58.0" prefHeight="28.0" prefWidth="247.0" promptText="Nom :" />
+                          <TextField fx:id="prenom" layoutX="100.0" layoutY="94.0" prefHeight="28.0" prefWidth="247.0" promptText="Prenom :" />
+                          <ComboBox fx:id="doctor" editable="true" layoutX="100.0" layoutY="167.0" prefHeight="28.0" prefWidth="247.0" promptText="Choose a doctor" />
+                          <Button layoutX="132.0" layoutY="207.0" mnemonicParsing="false" onAction="#AddRendezvous" prefHeight="32.0" prefWidth="175.0" text="Save To DB">
+                              <graphic>
+                                  <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@téléchargement.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                          <Button layoutX="133.0" layoutY="247.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="175.0" text="Save To File">
+                              <graphic>
+                                  <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@images.jpeg" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                        <Label visible="false" alignment="CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="282.0" prefHeight="28.0" prefWidth="219.0">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Label>
+                      </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="A4" minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="463.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" layoutY="-1.0" prefHeight="28.0" prefWidth="149.0" text="ClLIENTS">
+                           <font>
+                              <Font name="Jokerman" size="12.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="ClientTable" layoutY="28.0" prefHeight="285.0" prefWidth="446.0">
+                        </ListView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="A2" minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="463.0" visible="false">
+                      <children>
+                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="273.0" layoutY="17.0" prefHeight="28.0" prefWidth="149.0" text="New Doctor">
+                              <font>
+                                  <Font name="Jokerman" size="12.0" />
+                              </font>
+                          </Label>
+                          <TextField fx:id="nomdoc" layoutX="267.0" layoutY="58.0" prefHeight="28.0" prefWidth="165.0" promptText="Nom :" />
+                          <TextField fx:id="prenomdoc" layoutX="267.0" layoutY="94.0" prefHeight="28.0" prefWidth="165.0" promptText="Prenom :" />
+                          <Button layoutX="260.0" layoutY="199.0" mnemonicParsing="false" onAction="#AddMedecin" prefHeight="32.0" prefWidth="175.0" text="Save To DB">
+                              <graphic>
+                                  <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@téléchargement.png" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                          <Button layoutX="260.0" layoutY="239.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="175.0" text="Save To File">
+                              <graphic>
+                                  <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                      <image>
+                                          <Image url="@images.jpeg" />
+                                      </image>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                          <TextField fx:id="HDebut" layoutX="266.0" layoutY="129.0" prefHeight="28.0" prefWidth="76.0" promptText="HDebut" />
+                          <Label layoutX="347.0" layoutY="133.0" text=":" />
+                          <TextField fx:id="MDebut" layoutX="353.0" layoutY="129.0" prefHeight="28.0" prefWidth="76.0" promptText="MDebut" />
+                          <TextField fx:id="HFin" layoutX="266.0" layoutY="162.0" prefHeight="28.0" prefWidth="76.0" promptText="HFin" />
+                          <Label layoutX="347.0" layoutY="164.0" text=":" />
+                          <TextField fx:id="MFin" layoutX="353.0" layoutY="162.0" prefHeight="28.0" prefWidth="76.0" promptText="MFin" />
+                          <Separator layoutX="252.0" orientation="VERTICAL" prefHeight="313.0" prefWidth="3.0" />
+                          <ListView fx:id="DocTable" prefHeight="313.0" prefWidth="254.0">
+                          </ListView>
+                          <Label fx:id="messageLabel" visible="false" alignment="CENTER" contentDisplay="CENTER" layoutX="106.0" layoutY="282.0" prefHeight="28.0" prefWidth="219.0"/>
+                      </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="163.0">
+               <children>
+                  <ImageView fitHeight="59.0" fitWidth="109.0" layoutX="44.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@1.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="homebutton" layoutX="31.0" layoutY="110.0" mnemonicParsing="false" onAction="#onShowHomePage" prefHeight="28.0" prefWidth="116.0" text="Home" />
+                  <Button fx:id="medecinbutton" layoutX="31.0" layoutY="152.0" mnemonicParsing="false" onAction="#onShowMedecin" prefHeight="28.0" prefWidth="116.0" text="Medecin" />
+                   <Button fx:id="rvbutton" layoutX="31.0" layoutY="197.0" mnemonicParsing="false" onAction="#onShowRv" prefHeight="28.0" prefWidth="116.0" text="Rendez-Vous" />
+                   <Button fx:id="clientbutton" layoutX="31.0" layoutY="240.0" mnemonicParsing="false" onAction="#onShowClient" prefHeight="28.0" prefWidth="116.0" text="Client" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>
